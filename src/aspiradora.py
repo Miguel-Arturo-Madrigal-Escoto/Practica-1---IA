@@ -1,25 +1,28 @@
 
-from src.cuarto import Cuarto
 
-class Aspiradora(Cuarto):
+class Aspiradora:
 
-    def __init__(self, cuarto: Cuarto):
-        self.posicion      = 'izq'
-        self.cuarto_actual = cuarto
+    def __init__(self, posicion: str, estado: int):
+        self.posicion = posicion
+        if posicion == 'izq':
+            self.cuarto = 'A'
+        else:
+            self.cuarto = 'B'
+        self.cuarto_actual[self.cuarto] = estado
     
 
     def limpiar(self):
-        self.cuarto_actual.estado = 0
+        self.cuarto_actual[self.cuarto] = 0
 
     
-    def izquierda(self, cuarto: Cuarto):
-        self.posicion      = 'izq'
-        self.cuarto_actual = cuarto
+    def izquierda(self):
+        self.posicion  = 'izq'
+        self.cuarto = 'A' 
 
 
-    def derecha(self, cuarto: Cuarto):
-        self.posicion       = 'der'
-        self.cuarto_actual  = cuarto
+    def derecha(self):
+        self.posicion  = 'der'
+        self.cuarto = 'B' 
 
 
 

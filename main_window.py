@@ -23,8 +23,4 @@ class MainWindow(QMainWindow):
     
 
     def init(self):
-        self.cuartoA = Cuarto('A')
-        self.cuartoB = Cuarto('B')
-
-        self.aspiradora = Aspiradora(self.cuartoA)
-        self.aspiradora = Aspiradora(self.cuartoB)
+        self.aspiradora = Aspiradora('izq', 1)
