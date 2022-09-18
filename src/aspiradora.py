@@ -3,12 +3,17 @@
 class Aspiradora:
 
     def __init__(self, posicion: str, estado: int):
-        self.posicion = posicion
+        self.posicion = posicion   
+
+        self.cuarto_actual['A'] = estado
+        self.cuarto_actual['B'] = estado
+
         if posicion == 'izq':
             self.cuarto = 'A'
         else:
             self.cuarto = 'B'
-        self.cuarto_actual[self.cuarto] = estado
+        
+
     
 
     def limpiar(self):
