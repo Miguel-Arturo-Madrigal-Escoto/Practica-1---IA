@@ -73,26 +73,45 @@ class MainWindow(QMainWindow):
         self.ui.labelMovimientosTotales.setText(str(self.aspiradora.movimientos))
         self.ui.labelPromedio.setText(f"{ 0 if self.aspiradora.movimientos == 0 else (self.aspiradora.puntajes['aspiradas'] + self.aspiradora.puntajes['desplazamientos'])/self.aspiradora.movimientos }")
 
+    def estadoHabitaciones(self):
+        print('Habitación A limpia' if self.aspiradora.cuartos['A'] == 0 else 'Habitación A sucia')
+        print('Habitación B limpia' if self.aspiradora.cuartos['B'] == 0 else 'Habitación B sucia')
+
     def init(self):       
-          
+        print('Estado actual: Habitación ' + self.aspiradora.cuarto)
         while self.aspiradora.cuartos['A'] != 0 or self.aspiradora.cuartos['B'] != 0:
-            print('Habitación A limpia' if self.aspiradora.cuartos['A'] == 0 else 'Habitación A sucia')
-            print('Habitación B limpia' if self.aspiradora.cuartos['B'] == 0 else 'Habitación B sucia')
             self.actualizar()
+            self.estadoHabitaciones()
             if self.aspiradora.cuartos[self.aspiradora.cuarto] == 1 and self.aspiradora.posicion == 'izq':       
                 print('Aspirando habitación A')
                 self.aspiradora.limpiar()
-                self.actualizar()                
-                self.aspiradora.derecha()
+                self.actualizar() 
+                self.estadoHabitaciones()  
+
                 print('Aspirandora moviendose a la derecha')
+                self.aspiradora.derecha()
+                
+                if self.aspiradora.cuartos['B'] == 1:
+                    print('Aspirando habitación B')
+                    self.aspiradora.limpiar()
+                    self.actualizar()
+                    self.estadoHabitaciones() 
 
             elif self.aspiradora.cuartos[self.aspiradora.cuarto] == 1 and self.aspiradora.posicion == 'der':
                 print('Aspirando habitación B')
                 self.aspiradora.limpiar()
                 self.actualizar()
-                self.aspiradora.izquierda()
+                self.estadoHabitaciones()   
+
                 print('Aspirandora moviendose a la izquierda')
- 
+                self.aspiradora.izquierda()
+
+                if self.aspiradora.cuartos['A'] == 1:
+                    print('Aspirando habitación A')
+                    self.aspiradora.limpiar()
+                    self.actualizar()
+                    self.estadoHabitaciones()
+            
             elif self.aspiradora.cuartos[self.aspiradora.cuarto] == 0 and self.aspiradora.posicion == 'izq':
                 self.aspiradora.derecha()
                 print('Aspirandora moviendose a la derecha')
@@ -100,8 +119,8 @@ class MainWindow(QMainWindow):
             elif self.aspiradora.cuartos[self.aspiradora.cuarto] == 0 and self.aspiradora.posicion == 'der':
                 self.aspiradora.izquierda()
                 print('Aspirandora moviendose a la izquierda')
-        
-       
+ 
+     
                       
         print('Ya están limpias')
         self.estadoActual()
