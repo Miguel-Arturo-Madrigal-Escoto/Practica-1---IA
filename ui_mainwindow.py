@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(859, 755)
+        MainWindow.resize(859, 794)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -29,6 +29,14 @@ class Ui_MainWindow(object):
         self.label_2.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.label_2, 0, 1, 1, 1)
+
+        self.label_3 = QLabel(self.centralwidget)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(0, 50))
+        self.label_3.setMaximumSize(QSize(16777215, 50))
+        self.label_3.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_3, 0, 0, 1, 1)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -53,14 +61,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addLayout(self.horizontalLayout_2, 1, 0, 1, 2)
 
-        self.label_3 = QLabel(self.centralwidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMinimumSize(QSize(0, 50))
-        self.label_3.setMaximumSize(QSize(16777215, 50))
-        self.label_3.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.label_3, 0, 0, 1, 1)
-
         self.formLayout_4 = QFormLayout()
         self.formLayout_4.setObjectName(u"formLayout_4")
         self.label_5 = QLabel(self.centralwidget)
@@ -69,14 +69,14 @@ class Ui_MainWindow(object):
         self.label_5.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.label_5.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.formLayout_4.setWidget(0, QFormLayout.LabelRole, self.label_5)
+        self.formLayout_4.setWidget(1, QFormLayout.LabelRole, self.label_5)
 
         self.labelDesplazamientos = QLabel(self.centralwidget)
         self.labelDesplazamientos.setObjectName(u"labelDesplazamientos")
         self.labelDesplazamientos.setMinimumSize(QSize(0, 30))
         self.labelDesplazamientos.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.labelDesplazamientos)
+        self.formLayout_4.setWidget(1, QFormLayout.FieldRole, self.labelDesplazamientos)
 
         self.label_6 = QLabel(self.centralwidget)
         self.label_6.setObjectName(u"label_6")
@@ -84,14 +84,14 @@ class Ui_MainWindow(object):
         self.label_6.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.label_6.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.formLayout_4.setWidget(1, QFormLayout.LabelRole, self.label_6)
+        self.formLayout_4.setWidget(2, QFormLayout.LabelRole, self.label_6)
 
         self.labelAspiradas = QLabel(self.centralwidget)
         self.labelAspiradas.setObjectName(u"labelAspiradas")
         self.labelAspiradas.setMinimumSize(QSize(0, 30))
         self.labelAspiradas.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.formLayout_4.setWidget(1, QFormLayout.FieldRole, self.labelAspiradas)
+        self.formLayout_4.setWidget(2, QFormLayout.FieldRole, self.labelAspiradas)
 
         self.label_7 = QLabel(self.centralwidget)
         self.label_7.setObjectName(u"label_7")
@@ -99,27 +99,40 @@ class Ui_MainWindow(object):
         self.label_7.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.label_7.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.formLayout_4.setWidget(3, QFormLayout.LabelRole, self.label_7)
+        self.formLayout_4.setWidget(4, QFormLayout.LabelRole, self.label_7)
 
         self.labelPromedio = QLabel(self.centralwidget)
         self.labelPromedio.setObjectName(u"labelPromedio")
         self.labelPromedio.setMinimumSize(QSize(0, 30))
         self.labelPromedio.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.formLayout_4.setWidget(3, QFormLayout.FieldRole, self.labelPromedio)
+        self.formLayout_4.setWidget(4, QFormLayout.FieldRole, self.labelPromedio)
 
         self.label_8 = QLabel(self.centralwidget)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setMinimumSize(QSize(0, 30))
         self.label_8.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.formLayout_4.setWidget(2, QFormLayout.LabelRole, self.label_8)
+        self.formLayout_4.setWidget(3, QFormLayout.LabelRole, self.label_8)
 
         self.labelMovimientosTotales = QLabel(self.centralwidget)
         self.labelMovimientosTotales.setObjectName(u"labelMovimientosTotales")
         self.labelMovimientosTotales.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.formLayout_4.setWidget(2, QFormLayout.FieldRole, self.labelMovimientosTotales)
+        self.formLayout_4.setWidget(3, QFormLayout.FieldRole, self.labelMovimientosTotales)
+
+        self.label_9 = QLabel(self.centralwidget)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMinimumSize(QSize(0, 30))
+        self.label_9.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+
+        self.formLayout_4.setWidget(0, QFormLayout.LabelRole, self.label_9)
+
+        self.bateria = QProgressBar(self.centralwidget)
+        self.bateria.setObjectName(u"bateria")
+        self.bateria.setValue(100)
+
+        self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.bateria)
 
 
         self.gridLayout.addLayout(self.formLayout_4, 2, 0, 1, 2)
@@ -161,17 +174,18 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"B", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.labelA.setText("")
         self.labelB.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"A", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"                    Desplazamientos  (5 pts):", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"                   Desplazamientos  (5 pts):", None))
         self.labelDesplazamientos.setText("")
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"                             Aspiradas (10 pts):", None))
         self.labelAspiradas.setText("")
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"                                          Promedio:", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"                                           Promedio:", None))
         self.labelPromedio.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"                        Movimientos totales: ", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"                         Movimientos totales: ", None))
         self.labelMovimientosTotales.setText("")
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"                                               Bater\u00eda:", None))
         self.label.setText("")
         self.pushButtonStart.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.label_4.setText("")

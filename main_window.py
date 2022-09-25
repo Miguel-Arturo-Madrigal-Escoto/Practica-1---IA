@@ -25,6 +25,8 @@ class MainWindow(QMainWindow):
         self.aspiradora = Aspiradora()
 
         self.ui.pushButtonStart.clicked.connect(self.start)
+
+    
         #self.estadoActual()
         
 
@@ -56,6 +58,8 @@ class MainWindow(QMainWindow):
 
         if self.aspiradora.cuartos['A'] == 0 and self.aspiradora.cuarto == 'A':
             self.ui.labelA.setPixmap(self.pixmapAspiradora)
+        
+        self.ui.bateria.setValue(self.aspiradora.bateria)
 
         
     def actualizar(self):
@@ -96,7 +100,8 @@ class MainWindow(QMainWindow):
             elif self.aspiradora.cuartos[self.aspiradora.cuarto] == 0 and self.aspiradora.posicion == 'der':
                 self.aspiradora.izquierda()
                 print('Aspirandora moviendose a la izquierda')
-               
+        
+       
                       
         print('Ya están limpias')
         self.estadoActual()

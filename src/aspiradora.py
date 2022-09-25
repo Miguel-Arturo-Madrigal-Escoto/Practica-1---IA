@@ -7,6 +7,7 @@ class Aspiradora:
     def __init__(self):
         self.posicion = random.choice(['izq', 'der'])
         self.cuartos = {}
+        self.bateria = 100
 
         # ! aspirada: 10pts
         # ? desplazamiento: 5pts
@@ -30,6 +31,7 @@ class Aspiradora:
         self.cuartos[self.cuarto] = 0
         self.movimientos += 1
         self.puntajes['aspiradas'] += 10
+        self.bateria -= 10
 
     
     def izquierda(self):
@@ -37,6 +39,7 @@ class Aspiradora:
         self.cuarto = 'A' 
         self.movimientos += 1
         self.puntajes['desplazamientos'] += 5
+        self.bateria -= 5
 
 
     def derecha(self):
@@ -44,6 +47,7 @@ class Aspiradora:
         self.cuarto = 'B' 
         self.movimientos += 1
         self.puntajes['desplazamientos'] += 5
+        self.bateria -= 5
 
 
 
