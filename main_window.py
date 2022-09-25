@@ -79,6 +79,15 @@ class MainWindow(QMainWindow):
 
     def init(self):       
         print('Estado actual: Habitación ' + self.aspiradora.cuarto)
+
+        if self.aspiradora.cuartos[self.aspiradora.cuarto] == 0 and self.aspiradora.posicion == 'izq':
+            self.aspiradora.derecha()
+            print('Aspirandora moviendose a la derecha')
+        
+        elif self.aspiradora.cuartos[self.aspiradora.cuarto] == 0 and self.aspiradora.posicion == 'der':
+                self.aspiradora.izquierda()
+                print('Aspirandora moviendose a la izquierda')
+
         while self.aspiradora.cuartos['A'] != 0 or self.aspiradora.cuartos['B'] != 0:
             self.actualizar()
             self.estadoHabitaciones()
