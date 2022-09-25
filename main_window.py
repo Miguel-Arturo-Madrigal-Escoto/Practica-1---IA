@@ -96,9 +96,7 @@ class MainWindow(QMainWindow):
             elif self.aspiradora.cuartos[self.aspiradora.cuarto] == 0 and self.aspiradora.posicion == 'der':
                 self.aspiradora.izquierda()
                 print('Aspirandora moviendose a la izquierda')
-        
-            elif self.aspiradora.cuartos['A'] == 0 and self.aspiradora.cuartos['B'] == 0:
-                print('Ya quedó')         
+               
                       
         print('Ya están limpias')
         self.estadoActual()
